@@ -1,0 +1,110 @@
+compute.disableGuestAttributesAccess:
+  enforce: true
+
+compute.skipDefaultNetworkCreation:
+  enforce: true
+
+iam.allowServiceAccountCredentialLifetimeExtension:
+  allowed_values:
+    - "allow-example1@example.com"
+    - "allow-example2@example.com"
+#  denied_values:
+#    - "deny-example@example.com"
+
+cloudfunctions.allowedIngressSettings:
+  allowed_values:
+    - "ALLOW_ALL"
+    - "ALLOW_INTERNAL_ONLY"
+#    - "ALLOW_INTERNAL_AND_GCLB"
+
+run.allowedIngress:
+  allowed_values:
+    - "all"
+    - "internal"
+#    - "internal-and-cloud-load-balancing"
+
+cloudfunctions.requireVPCConnector:
+  enforce: true
+
+run.allowedVPCEgress:
+  allowed_values:
+    - "private-ranges-only"
+#    - "all-traffic"
+
+compute.vmExternalIpAccess:
+  denied_values:
+    - "projects/org-policies-sandbox/zones/us-central1-c/instances/instance-20240505-131737"
+#  allowed_values:
+#    - "projects/project_id/zones/zone/instances/instance2"
+
+iam.automaticIamGrantsForDefaultServiceAccounts:
+  enforce: false
+
+compute.disableInternetNetworkEndpointGroup:
+  enforce: true
+
+iam.disableServiceAccountKeyCreation:
+  enforce: true
+
+iam.disableServiceAccountKeyUpload:
+  enforce: true
+
+compute.disableNestedVirtualization:
+  enforce: true
+
+compute.disableSerialPortAccess:
+  enforce: true
+
+compute.disableVpcExternalIpv6:
+  enforce: true
+
+storage.publicAccessPrevention:
+  enforce: true
+
+storage.uniformBucketLevelAccess:
+  enforce: true
+
+gcp.detailedAuditLoggingMode:
+  enforce: true
+
+compute.requireOsLogin:
+  enforce: true
+
+cloudfunctions.allowedVpcConnectorEgressSettings:
+  allowed_values:
+    - "ALL_TRAFFIC"
+    - "PRIVATE_RANGES_ONLY"
+
+commerceorggovernance.marketplaceServices:
+  allowed_values:
+    - "PRIVATE_MARKETPLACE"
+    - "IAAS_PROCUREMENT"
+
+gcp.restrictServiceUsage:
+  denied_values:
+    - "bigtable.googleapis.com"
+
+compute.restrictCloudNATUsage:
+  denied_values:
+    - "under:folders/828889349283"
+
+compute.restrictLoadBalancerCreationForTypes:
+  denied_values:
+    - "INTERNAL_TCP_UDP"
+    - "INTERNAL_HTTP_HTTPS"
+
+sql.restrictPublicIp:
+  enforce: false
+
+compute.restrictXpnProjectLienRemoval:
+  enforce: true
+
+compute.restrictSharedVpcHostProjects:
+  allowed_values:
+    - "projects/org-policies-sandbox"
+
+compute.restrictVpnPeerIPs:
+  allowed_values:
+    - "192.168.1.1"
+    - "10.0.0.1"
+
